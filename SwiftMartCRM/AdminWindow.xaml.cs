@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,31 @@ namespace SwiftMartCRM
         public AdminWindow()
         {
             InitializeComponent();
+        }
+
+        private void AddPhotos(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog()
+            {
+                Multiselect = true,
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;"
+            };
+
+            if (fileDialog.ShowDialog() == true)
+            {
+                foreach (var filePath in fileDialog.FileNames)
+                {
+                    Image image = new Image
+                    {
+                        Source = new BitmapImage(new Uri(filePath)),
+                        Width = 200,
+                        Height = 200,
+                        Margin = new Thickness(5)
+                    };
+
+                    PhotoContainer.Children.Add(image);
+                }
+            }
         }
     }
 }
