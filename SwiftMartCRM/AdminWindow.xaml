@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="AdminWindow" Height="1080" Width="1920">
     <Grid>
+        <!-- Основная область контента -->
+        <Border Background="#FFD3D3D3" Margin="190,179,190,151">
+            <TextBlock TextWrapping="Wrap" Width="300" Height="30" Text="ScreenSize" Margin="82,318,1158,386"/>
+        </Border>
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -21,16 +25,28 @@
         <Border Background="#FFCC5C58" Height="50" VerticalAlignment="Bottom"/>
 
         <!-- Левое меню -->
-        <Border Background="#FFE0E0E0" Width="150" HorizontalAlignment="Left" Margin="0,166,0,138">
+        <Border Background="#FFE0E0E0" Width="150" HorizontalAlignment="Left" Margin="0,166,0,138" BorderThickness="0">
             <StackPanel VerticalAlignment="Center">
-                <Button Content="Add product" Margin="10,5" Height="30"/>
-                <Button Content="Contact" Margin="10,5" Height="30"/>
-                <Button Content="Payment information" Margin="10,5" Height="30"/>
-                <Button Content="Orders" Margin="10,5" Height="30"/>
+                <Button Content="Add product" Margin="10,5" Height="30" BorderThickness="0"/>
+                <Button Content="Contact" Margin="10,5" Height="30" BorderThickness="0"/>
+                <Button Content="Payment information" Margin="10,5" Height="30" BorderThickness="0"/>
+                <Button Content="Orders" Margin="10,5" Height="30" BorderThickness="0"/>
             </StackPanel>
         </Border>
 
-        <!-- Основная область контента -->
-        <Border Background="#FFD3D3D3" Margin="190,179,190,151" CornerRadius="10"/>
+        <TextBox Text="Category" FontSize="20" Width="100" Height="30" Margin="272,0,1548,731" Background="LightGray" BorderThickness="0" VerticalAlignment="Bottom"/>
+        <ComboBox Width="300" Height="40" Margin="272,351,1348,673" Name="Category">
+            <ComboBoxItem Content="Electronics"/>
+            <ComboBoxItem Content="Household appliances"/>
+        </ComboBox>
+        <TextBox Text="Subcategory" BorderThickness="0" FontSize="20" Background="LightGray" Width="300" Height="30" Margin="1090,303,530,731"></TextBox>
+        <ComboBox Width="300" Height="40" Margin="1090,355,530,669" Name="Subcategory">
+            <ComboBoxItem Content="Phones"/>
+            <ComboBoxItem Content="Laptops"/>
+            <ComboBoxItem Content="TVs"/>
+            <ComboBoxItem Content="Tablets"/>
+            <ComboBoxItem Content="Refrigerators"/>
+            <ComboBoxItem Content="Washing machines"/>
+        </ComboBox>
     </Grid>
 </Window>

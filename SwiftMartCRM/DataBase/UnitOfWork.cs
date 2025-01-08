@@ -14,9 +14,9 @@
         //}
 
         //public ICrudOperations<Song> Songs { get; }
- 
+
         //public ICrudOperations<Performer> Performers { get; }
- 
+
         //public ICrudOperations<MusicCollection> MusicCollections { get; }
 
         //public ICrudOperations<Radio> Radios { get; }

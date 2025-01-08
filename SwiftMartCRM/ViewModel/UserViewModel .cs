@@ -1,5 +1,5 @@
 ﻿using SwiftMart.Commands;
-using SwiftMart.DataBase;
+//using SwiftMart.DataBase;
 using SwiftMart.EmailTools;
 using SwiftMart.Hash;
 using SwiftMart.Sessions;
@@ -22,14 +22,14 @@ namespace SwiftMart.ViewModel
         private string password;
         private string address;
         private string role;
-        private readonly Context context;
+        //private readonly Context context;
         private readonly UserValidator userValidator;
         public ICommand RegisterCommand { get; }
         public ICommand LoginCommand { get; }
         public UserViewModel()
         {
-            context = new Context();
-            userValidator = new UserValidator(context);
+            //context = new Context();
+            //userValidator = new UserValidator(context);
 
             RegisterCommand = new AsyncRelayCommand(Register);
             LoginCommand = new RelayCommand(Login);
@@ -122,8 +122,8 @@ namespace SwiftMart.ViewModel
                     Role = "Admin"
                 };
 
-                context.Admin.Add(newAdmin);
-                context.SaveChanges();
+                //context.Admin.Add(newAdmin);
+                //context.SaveChanges();
 
                 try
                 {
