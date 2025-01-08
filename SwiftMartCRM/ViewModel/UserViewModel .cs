@@ -20,7 +20,6 @@ namespace SwiftMart.ViewModel
         private string lastName;
         private string email;
         private string password;
-        private string address;
         private string role;
         private readonly Context context;
         private readonly UserValidator userValidator;
@@ -45,12 +44,6 @@ namespace SwiftMart.ViewModel
         {
             get => lastName;
             set => SetProperty(ref lastName, value);
-        }
-
-        public string Address
-        {
-            get => address;
-            set => SetProperty(ref address, value);
         }
 
         public string Name
@@ -108,7 +101,7 @@ namespace SwiftMart.ViewModel
 
         private async Task Register()
         {
-            if (userValidator.ValidateRegistration(Name, Lastname, Email, Password, Address, out string errorMessage))
+            if (userValidator.ValidateRegistration(Name, Lastname, Email, Password, out string errorMessage))
             {
                 string hashedPassword = PasswordHasher.HashPassword(Password);
 
@@ -118,7 +111,6 @@ namespace SwiftMart.ViewModel
                     Lastname = Lastname,
                     Email = Email,
                     Password = hashedPassword,
-                    Address = Address,
                     Role = "Admin"
                 };
 
@@ -132,7 +124,6 @@ namespace SwiftMart.ViewModel
                     MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     
                     AdminSession.Instance.Id = newAdmin.Id;
-                    AdminSession.Instance.Address = newAdmin.Address;
                     AdminSession.Instance.Name = newAdmin.Name;
 
                     OpenHomeShop();

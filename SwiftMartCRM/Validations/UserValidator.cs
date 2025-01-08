@@ -17,11 +17,10 @@ namespace SwiftMart.Validations
             this.context = context;
         }
 
-        public bool ValidateRegistration(string name, string lastName, string email, string password, string address, out string errorMessage)
+        public bool ValidateRegistration(string name, string lastName, string email, string password, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(lastName) ||
-                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password) ||
-                string.IsNullOrWhiteSpace(address))
+                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
                 errorMessage = "Please fill in all the fields.";
                 return false;
@@ -33,7 +32,7 @@ namespace SwiftMart.Validations
                 return false;
             }
 
-            if (context.Users.Any(u => u.Email == email))
+            if (context.Admin.Any(u => u.Email == email))
             {
                 errorMessage = "Email is already registered.";
                 return false;
@@ -45,7 +44,7 @@ namespace SwiftMart.Validations
 
         public bool ValidateLogin(string email, string password, out string errorMessage)
         {
-            var user = context.Users.SingleOrDefault(u => u.Email == email);
+            var user = context.Admin.SingleOrDefault(u => u.Email == email);
             if (user == null)
             {
                 errorMessage = "User with the provided email not found.";

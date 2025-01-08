@@ -124,15 +124,6 @@
                         <Label Content="Please make up a password" FontSize="9"/>
                         <PasswordBox x:Name="MyPasswordBox" Height="35" Width="240" Margin="0,0,0,10" />
 
-                        <Label Content="Please enter your address" FontSize="9"/>
-                        <TextBox Name="RegistrationAddressTextBox" Text="{Binding Address}" Height="35" Width="240" Margin="0,0,0,20" GotFocus="RegistrationAddressTextBox_GotFocus" LostFocus="RegistrationAddressTextBox_LostFocus">
-
-                            <TextBox.Foreground>
-                                <SolidColorBrush Color="#80000000" />
-                            </TextBox.Foreground>
-
-                        </TextBox>
-                        <!-- Кнопка регистрации -->
                         <Button Content="Register" 
                         Background="Black" 
                         Foreground="White" 
