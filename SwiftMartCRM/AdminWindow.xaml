@@ -171,19 +171,17 @@
                                     </ComboBox>
                                 </StackPanel>
 
-                                <StackPanel Grid.Row="5" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
+                                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" >
                                     <WrapPanel x:Name="PhotoContainer" Margin="10">
                                     </WrapPanel>
 
 
                                 </StackPanel>
-
                             </Grid>
                         </Grid>
+                        <Button Content="Add Photos" Width="200" Height="40" Margin="0,0,0,10" HorizontalAlignment="Left" Click="AddPhotos_Click" VerticalAlignment="Bottom" Grid.Row="1"/>
                     </Grid>
                 </Border>
-                <ScrollViewer/>
-                <Button Content="Add Photos" Width="200" Height="40" Margin="143,759,0,215" HorizontalAlignment="Left" Click="AddPhotos"/>
             </Grid>
         </Grid>
     </Grid>

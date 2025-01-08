@@ -25,7 +25,7 @@ namespace SwiftMartCRM
             InitializeComponent();
         }
 
-        private void AddPhotos(object sender, RoutedEventArgs e)
+        private void AddPhotos_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog()
             {
