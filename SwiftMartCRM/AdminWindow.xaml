@@ -171,8 +171,13 @@
                                     </ComboBox>
                                 </StackPanel>
 
+<<<<<<< HEAD
                                 <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" >
                                     <WrapPanel x:Name="PhotoContainer" HorizontalAlignment="Stretch" Margin="10" Width="1000">
+=======
+                                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" >
+                                    <WrapPanel x:Name="PhotoContainer" Margin="10">
+>>>>>>> 3e623d12e0c8c237763f099b1bd36f60b60bccf9
                                     </WrapPanel>
 
 

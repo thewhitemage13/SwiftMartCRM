@@ -1,4 +1,12 @@
 ﻿using Microsoft.Win32;
+<<<<<<< HEAD
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> 3e623d12e0c8c237763f099b1bd36f60b60bccf9
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -29,6 +37,7 @@ namespace SwiftMartCRM
             {
                 foreach (var filePath in fileDialog.FileNames)
                 {
+<<<<<<< HEAD
                     if (counter < 4)
                     {
                         counter++;
@@ -46,6 +55,17 @@ namespace SwiftMartCRM
                     {
                         MessageBox.Show("Error");
                     }
+=======
+                    Image image = new Image
+                    {
+                        Source = new BitmapImage(new Uri(filePath)),
+                        Width = 200,
+                        Height = 200,
+                        Margin = new Thickness(5)
+                    };
+
+                    PhotoContainer.Children.Add(image);
+>>>>>>> 3e623d12e0c8c237763f099b1bd36f60b60bccf9
                 }
             }
         }
