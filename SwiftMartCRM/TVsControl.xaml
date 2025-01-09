@@ -24,7 +24,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
-                <TextBlock Text="Screen Size"/>
+                <TextBlock Text="Screen Diagonal"/>
                 <TextBox/>
             </StackPanel>
 
@@ -34,22 +34,25 @@
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="2" Margin="10">
-                <TextBlock Text="CPU"/>
+                <TextBlock Text="Screen Frequency"/>
                 <TextBox/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
-                <TextBlock Text="Camera"/>
+                <TextBlock Text="OS"/>
                 <TextBox/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
-                <TextBlock Text="RAM"/>
-                <TextBox/>
+                <TextBlock Text="DVB-C"/>
+                <ComboBox Width="300">
+                    <ComboBoxItem Content="Yes"></ComboBoxItem>
+                    <ComboBoxItem Content="No"></ComboBoxItem>
+                </ComboBox>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="2" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="Micro SD"/>
+                <TextBlock Text="DVB-S2"/>
                 <ComboBox Width="300">
                     <ComboBoxItem Content="Yes"></ComboBoxItem>
                     <ComboBoxItem Content="No"></ComboBoxItem>
@@ -57,7 +60,7 @@
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="0" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="3G"/>
+                <TextBlock Text="DVB-S2"/>
                 <ComboBox Width="300">
                     <ComboBoxItem Content="Yes"></ComboBoxItem>
                     <ComboBoxItem Content="No"></ComboBoxItem>
@@ -65,44 +68,13 @@
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="LTE"/>
+                <TextBlock Text="DVB-T2"/>
                 <ComboBox Width="300">
                     <ComboBoxItem Content="Yes"></ComboBoxItem>
                     <ComboBoxItem Content="No"></ComboBoxItem>
                 </ComboBox>
             </StackPanel>
 
-            <StackPanel Grid.Row="2" Grid.Column="2" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="5G"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-
-            <StackPanel Grid.Row="3" Grid.Column="0" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="GPS"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-
-            <StackPanel Grid.Row="3" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="GLONASS"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-
-            <StackPanel Grid.Row="3" Grid.Column="2" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="BDS"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
 
             <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" >
                 <WrapPanel x:Name="PhotoContainer" HorizontalAlignment="Stretch" Margin="10" Width="1000">
