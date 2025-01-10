@@ -68,7 +68,6 @@
                 </ComboBox>
             </StackPanel>
 
-
             <StackPanel Grid.Row="2" Grid.Column="1" Margin="10">
                 <TextBlock Text="TV Name"/>
                 <TextBox x:Name="TVName"/>

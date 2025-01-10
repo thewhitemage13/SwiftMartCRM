@@ -19,7 +19,7 @@ namespace SwiftMartCRM
         {
             if (SubcategoryComboBox.SelectedItem is ComboBoxItem selectedItem)
             {
-                string selectedSubcategory = selectedItem.Content.ToString();
+                string? selectedSubcategory = selectedItem.Content.ToString();
 
                 DynamicFields.Content = null;
 
