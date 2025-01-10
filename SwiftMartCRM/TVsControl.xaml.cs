@@ -1,7 +1,9 @@
 ﻿using Microsoft.Win32;
+using SwiftMartCRM.ProductEntity;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +25,11 @@ namespace SwiftMartCRM
     public partial class TVsControl : UserControl
     {
         private int counter = 0;
+        private string? fileContent;
+        private List<string> photoFiles;
         public TVsControl()
         {
+            photoFiles = new List<string>();
             InitializeComponent();
         }
 
@@ -52,6 +57,7 @@ namespace SwiftMartCRM
                             Margin = new Thickness(5)
                         };
 
+                        photoFiles.Add(filePath);
                         PhotoContainer.Children.Add(image);
                     }
                     else
@@ -61,6 +67,58 @@ namespace SwiftMartCRM
 
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    fileContent = File.ReadAllText(openFileDialog.FileName);
+
+                    MessageBox.Show("Description added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            bool dvbC = converterToBool(DVBC.ToString());
+            bool dvbS2 = converterToBool(DVBS2.ToString());
+            bool dvbT2 = converterToBool(DVBT2.ToString());
+
+            TV tV = new TV()
+            {
+               Name = TVName.ToString(),
+               Price = Price.ToString(),
+               Description = fileContent, 
+               ScreenDiagonal = ScreenDiagonal.ToString(),
+               ScreenFrequency = ScreenFrequency.ToString(),
+               ScreenResolution = ScreenResolution.ToString(),
+               OS = OS.ToString(),
+               DVB_C = dvbC,
+               DVB_S2 = dvbS2,
+               DVB_T2 = dvbT2,
+               photos = photoFiles
+            };
+        }
+
+
+        private bool converterToBool(string text)
+        {
+            if(text == "Yes")
+                return true;
+            return false;
         }
     }
 }

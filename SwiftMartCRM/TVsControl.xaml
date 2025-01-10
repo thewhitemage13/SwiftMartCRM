@@ -24,84 +24,59 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
-                <TextBlock Text="Screen Size"/>
-                <TextBox/>
+                <TextBlock Text="Screen Diagonal"/>
+                <TextBox x:Name="ScreenDiagonal"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
                 <TextBlock Text="Screen Resolution"/>
-                <TextBox/>
+                <TextBox x:Name="ScreenResolution"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="2" Margin="10">
-                <TextBlock Text="CPU"/>
-                <TextBox/>
+                <TextBlock Text="Screen Frequency"/>
+                <TextBox x:Name="ScreenFrequency"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
-                <TextBlock Text="Camera"/>
-                <TextBox/>
+                <TextBlock Text="OS"/>
+                <TextBox x:Name="OS"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
-                <TextBlock Text="RAM"/>
-                <TextBox/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
+                <TextBlock Text="DVB-C"/>
+                <ComboBox Width="300" x:Name="DVBC">
+                    <ComboBoxItem Content="Yes"/>
+                    <ComboBoxItem Content="No"/>
+                </ComboBox>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="2" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="Micro SD"/>
-                <ComboBox Width="300">
+                <TextBlock Text="DVB-S2"/>
+                <ComboBox Width="300" x:Name="DVBS2">
                     <ComboBoxItem Content="Yes"></ComboBoxItem>
                     <ComboBoxItem Content="No"></ComboBoxItem>
                 </ComboBox>
             </StackPanel>
+
 
             <StackPanel Grid.Row="2" Grid.Column="0" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="3G"/>
-                <ComboBox Width="300">
+                <TextBlock Text="DVB-T2"/>
+                <ComboBox Width="300" x:Name="DVBT2">
                     <ComboBoxItem Content="Yes"></ComboBoxItem>
                     <ComboBoxItem Content="No"></ComboBoxItem>
                 </ComboBox>
             </StackPanel>
 
-            <StackPanel Grid.Row="2" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="LTE"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
+
+            <StackPanel Grid.Row="2" Grid.Column="1" Margin="10">
+                <TextBlock Text="TV Name"/>
+                <TextBox x:Name="TVName"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="2" Grid.Column="2" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="5G"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-
-            <StackPanel Grid.Row="3" Grid.Column="0" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="GPS"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-
-            <StackPanel Grid.Row="3" Grid.Column="1" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="GLONASS"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-
-            <StackPanel Grid.Row="3" Grid.Column="2" Margin="10" HorizontalAlignment="Left">
-                <TextBlock Text="BDS"/>
-                <ComboBox Width="300">
-                    <ComboBoxItem Content="Yes"></ComboBoxItem>
-                    <ComboBoxItem Content="No"></ComboBoxItem>
-                </ComboBox>
+            <StackPanel Grid.Row="2" Grid.Column="2" Margin="10">
+                <TextBlock Text="Price"/>
+                <TextBox x:Name="Price"/>
             </StackPanel>
 
             <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" >
@@ -111,5 +86,7 @@
             </StackPanel>
         </Grid>
         <Button Content="Add Photos" Width="200" Height="40" Margin="0,0,0,10" HorizontalAlignment="Left" Click="AddPhotos_Click" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Button Content="Save" Width="200" Height="40" Margin="0,0,0,10" Click="Button_Click_1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Button Content="Add Description" Width="200" Height="40" Margin="0,0,0,10" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1"/>
     </Grid>
 </UserControl>

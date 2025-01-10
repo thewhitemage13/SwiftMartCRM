@@ -111,5 +111,6 @@
             </StackPanel>
         </Grid>
         <Button Content="Add Photos" Width="200" Height="40" Margin="0,0,0,10" HorizontalAlignment="Left" Click="AddPhotos_Click" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Button Content="Save" Width="200" Height="40" Margin="0,0,0,10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1"/>
     </Grid>
 </UserControl>

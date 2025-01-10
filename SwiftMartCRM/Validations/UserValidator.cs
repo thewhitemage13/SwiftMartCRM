@@ -32,7 +32,7 @@ namespace SwiftMart.Validations
                 return false;
             }
 
-            if (context.Admin.Any(u => u.Email == email))
+            if (context.Admins.Any(u => u.Email == email))
             {
                 errorMessage = "Email is already registered.";
                 return false;
@@ -44,7 +44,7 @@ namespace SwiftMart.Validations
 
         public bool ValidateLogin(string email, string password, out string errorMessage)
         {
-            var user = context.Admin.SingleOrDefault(u => u.Email == email);
+            var user = context.Admins.SingleOrDefault(u => u.Email == email);
             if (user == null)
             {
                 errorMessage = "User with the provided email not found.";
@@ -57,7 +57,7 @@ namespace SwiftMart.Validations
                 return false;
             }
 
-            if(user.Role != "Admin")
+            if (user.Role != "Admin")
             {
                 errorMessage = "You do not have permission to use this application.";
                 return false;

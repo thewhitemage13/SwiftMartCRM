@@ -114,7 +114,7 @@ namespace SwiftMart.ViewModel
                     Role = "Admin"
                 };
 
-                context.Admin.Add(newAdmin);
+                context.Admins.Add(newAdmin);
                 context.SaveChanges();
 
                 try
