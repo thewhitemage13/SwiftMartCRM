@@ -1,36 +1,32 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SwiftMartCRM
 {
     /// <summary>
-    /// Логика взаимодействия для LaptopsControl.xaml
+    /// Interaction logic for LaptopsControl.xaml
+    /// Allows adding images to the laptop product entry.
     /// </summary>
     public partial class LaptopsControl : UserControl
     {
         private int counter = 0;
+        private const int MaxImages = 4;  // Maximum number of images allowed
 
         public LaptopsControl()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the click event for adding images to the laptop product.
+        /// Opens a file dialog for the user to select images and displays them in the PhotoContainer.
+        /// </summary>
         private void AddPhotos_Click(object sender, RoutedEventArgs e)
         {
+            // Open file dialog for selecting images
             OpenFileDialog fileDialog = new OpenFileDialog()
             {
                 Multiselect = true,
@@ -39,12 +35,15 @@ namespace SwiftMartCRM
 
             if (fileDialog.ShowDialog() == true)
             {
+                // Loop through selected files
                 foreach (var filePath in fileDialog.FileNames)
                 {
-
-                    if (counter < 4)
+                    // Check if the counter exceeds the limit of 4 images
+                    if (counter < MaxImages)
                     {
                         counter++;
+
+                        // Create and display the image
                         Image image = new Image
                         {
                             Source = new BitmapImage(new Uri(filePath)),
@@ -53,13 +52,15 @@ namespace SwiftMartCRM
                             Margin = new Thickness(5)
                         };
 
+                        // Add image to the PhotoContainer
                         PhotoContainer.Children.Add(image);
                     }
                     else
                     {
-                        MessageBox.Show("Error");
+                        // Show an error message if trying to add more than 4 images
+                        MessageBox.Show($"You can only add a maximum of {MaxImages} images.", "Limit Reached", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        break; // Exit the loop since no more images should be added
                     }
-
                 }
             }
         }
